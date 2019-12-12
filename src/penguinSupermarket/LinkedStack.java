@@ -35,7 +35,7 @@ public class LinkedStack<T>  implements Stack<T>,DataStructure {
     @Override
     public int size() {
         if(this.head != null){
-            int result = 1;
+            int result = 0;
             for (List t = head; t != null; t = t.getNext())
                 result++;
             return result;

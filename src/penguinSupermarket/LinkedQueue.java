@@ -14,7 +14,7 @@ public class LinkedQueue<T> implements Queue<T>,DataStructure {
     @Override
     public int size() {
         if(this.head != null){
-            int result = 1;
+            int result = 0;
             for (List t = head; t != null; t = t.getNext())
                 result++;
             return result;

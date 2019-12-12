@@ -20,15 +20,15 @@ public class TestSuperMarket
         pc1.addProductToBasket(fp1);
         pc1.addProductToBasket(fp1);
 
-        pc2.addProductToBasket(fp3);
-        pc2.addProductToBasket(fp2);
-
-        pc3.addProductToBasket(fp2);
-        pc3.addProductToBasket(fp3);
-
-        pc4.addProductToBasket(fp2);
-
-        pc5.addProductToBasket(fp2);
+//        pc2.addProductToBasket(fp3);
+//        pc2.addProductToBasket(fp2);
+//
+//        pc3.addProductToBasket(fp2);
+//        pc3.addProductToBasket(fp3);
+//
+//        pc4.addProductToBasket(fp2);
+//
+//        pc5.addProductToBasket(fp2);
 
         pc1.goToCheckout(pm);
         pc2.goToCheckout(pm);
