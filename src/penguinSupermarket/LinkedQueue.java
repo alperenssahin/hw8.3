@@ -2,13 +2,8 @@ package penguinSupermarket;
 
 public class LinkedQueue<T> implements Queue<T>,DataStructure {
     private List<T> head;
-    private List<T> tail;
-    
-    public LinkedQueue() {
-		super();
-	}
-    
-	public LinkedQueue(T x) {
+    private List<T> tail = null;
+    public LinkedQueue(T x) {
         if(x == null){
             this.head = null;
         }else{

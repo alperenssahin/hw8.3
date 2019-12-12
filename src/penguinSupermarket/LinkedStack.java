@@ -2,17 +2,13 @@ package penguinSupermarket;
 
 public class LinkedStack<T>  implements Stack<T>,DataStructure {
     private List<T> head;
- 
-    public LinkedStack() {
-		super();
-	}
-
-	public LinkedStack(T x) {
+    public LinkedStack(T x) {
         if(x == null){
             this.head = null;
         }else{
             this.head = new List<>(x);
         }
+
     }
 
     @Override
@@ -54,21 +50,14 @@ public class LinkedStack<T>  implements Stack<T>,DataStructure {
         return size() == 0;
     }
 
-    public static void main(String[] args) {
-        LinkedStack<String> test = new LinkedStack<>();
-        System.out.println(test.size());
-        test.push("ABC");
-        System.out.println(test.size());
-        test.push("DEF");
-        System.out.println(test.size());
-        
-        System.out.println(test.pop());
-        System.out.println(test.size());
-        System.out.println(test.pop());
-        System.out.println(test.size());
-        System.out.println(test.pop());
-        System.out.println(test.size());
-        System.out.println(test.pop());
-
-    }
+//    public static void main(String[] args) {
+//        LinkedStack<Integer> test = new LinkedStack<>(10);
+//        test.push(20);
+//        test.push(30);
+//        System.out.println(test.pop());
+//        System.out.println(test.pop());
+//        System.out.println(test.pop());
+//        System.out.println(test.pop());
+//
+//    }
 }

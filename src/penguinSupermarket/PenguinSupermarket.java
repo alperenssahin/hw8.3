@@ -35,7 +35,7 @@ public final class PenguinSupermarket {
                 }
             }
             setCheckouts(tmpArr);
-            QueueConnector<PenguinCustomer> pcq = tmp.getQueue();
+            LinkedQueue<PenguinCustomer> pcq = tmp.getCustomerQueue();
             PenguinCustomer pc = pcq.dequeue();
             while (pc != null){
                 pc.goToCheckout(this);
@@ -45,7 +45,7 @@ public final class PenguinSupermarket {
             ExceptionUtil.unsupportedOperation("Checkout is not exist");
         }
     }
-    public void serveCustomers(){
+    public void serveCustumer(){
         for(Checkout c : this.checkouts){
             c.serveNextCustomer();
         }

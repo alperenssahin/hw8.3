@@ -1,20 +1,20 @@
 package penguinSupermarket;
 
 public final class Checkout {
-    private QueueConnector<PenguinCustomer> queue;
-    private QueueConnector<FishyProduct> bandBeforeCashier;
-    private QueueConnector<FishyProduct> bandAfterCashier;
+    private LinkedQueue<PenguinCustomer> customerQueue;
+    private LinkedQueue<FishyProduct> bandBeforeCashier;
+    private LinkedQueue<FishyProduct> bandAfterCashier;
 
     public Checkout() {
-    	queue = new QueueConnector<>(null);
-        bandBeforeCashier = new QueueConnector<>(null);
-        bandAfterCashier = new QueueConnector<>(null);
+        customerQueue = new LinkedQueue<>(null);
+        bandBeforeCashier = new LinkedQueue<>(null);
+        bandAfterCashier = new LinkedQueue<>(null);
     }
     public void serveNextCustomer(){
-        PenguinCustomer current = queue.dequeue();
+        PenguinCustomer current = customerQueue.dequeue();
         int amount = 0;
         if(current != null){
-            this.bandBeforeCashier = current.placeAllProductsOnBand(this.bandBeforeCashier);
+            this.bandBeforeCashier = current.placeAllProductOnBand(this.bandBeforeCashier);
             FishyProduct tmp = this.bandBeforeCashier.dequeue();
             while (tmp != null){
                 amount += tmp.getPrice();
@@ -26,21 +26,21 @@ public final class Checkout {
         }
     }
     public int queueLength(){
-        if(this.queue == null){
+        if(this.customerQueue == null){
             return 0;
         }else{
-            return this.queue.size();
+            return this.customerQueue.size();
         }
     }
-    public QueueConnector<PenguinCustomer> getQueue() {
-        return queue;
+    public LinkedQueue<PenguinCustomer> getCustomerQueue() {
+        return customerQueue;
     }
 
-    public QueueConnector<FishyProduct> getBandBeforeCashier() {
+    public LinkedQueue<FishyProduct> getBandBeforeCashier() {
         return bandBeforeCashier;
     }
 
-    public QueueConnector<FishyProduct> getBandAfterCashier() {
+    public LinkedQueue<FishyProduct> getBandAfterCashier() {
         return bandAfterCashier;
     }
 }

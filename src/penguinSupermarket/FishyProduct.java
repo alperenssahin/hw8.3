@@ -4,7 +4,7 @@ public final class FishyProduct {
     private final String name;
     private final int price;
 
-    public FishyProduct(String name, int price) {
+    FishyProduct(String name, int price) {
         if(!name.equals("")){
             this.name = name;
         }else{
